@@ -1,7 +1,7 @@
 const GET_MENUS_SUCCESS = 'GET_MENUS_SUCCESS';
 const GET_MENUS_FAIL = 'GET_MENUS_FAIL';
 const GET_MENUS = 'GET_MENUS';
-const API_PREFIX = 'http://localhost/boilerplate/';
+const API_PREFIX = 'http://localhost/';
 const API_MENUS_URL = API_PREFIX + 'wp-json/wp-api-menus/v2/menus/';
 
 const GET_MENU_ITEMS_SUCCESS = 'GET_MENU_ITEMS_SUCCESS';
