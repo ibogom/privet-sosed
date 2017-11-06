@@ -1,0 +1,19 @@
+@import "../../../assets/themes/default/color_cheme";
+
+.posts-wrapper{
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: 1px solid $brdr-light;
+  .post-element{
+    width: 100%;
+  }
+  .post-data{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    color: $font-scnd-clr;
+    text-transform: capitalize;
+  }
+}

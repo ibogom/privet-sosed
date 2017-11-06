@@ -1,0 +1,66 @@
+@import "../../../assets/themes/default/color_cheme";
+@import "../../../assets/themes/default/icons";
+@import "../../../assets/themes/default/font-sizes";
+@import "../../../assets/themes/default/variables";
+
+.header{
+  width: 100%;
+  position: fixed;
+  height: $header-height;
+  background-color: $pr-clr;
+  padding: 0 20px;
+  box-sizing: border-box;
+  .section{
+    display: table;
+    width: 100%;
+    height: 50%;
+  }
+  .active{
+    border-bottom: 1px solid $brdr-light;
+  }
+  .right{
+    width: 20%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 10px;
+  }
+  .middle{
+    width: 60%;
+    display: table-cell;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+    color: $font-scnd-clr;
+  }
+  .left{
+    width: 20%;
+    display: table-cell;
+  }
+  .menu{
+    width: 50px;
+    height: 100%;
+    display: table;
+    cursor: pointer;
+    table-layout: fixed;
+    span{
+      font-size: $font-10px;
+      font-weight: bold;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &:hover:before{
+      color: $font-thrd-clr;
+    }
+    &:before{
+      content: $i-dehaze;
+      display: table-cell;
+      text-align: center;
+      font-size: $font-22px;
+      color: $font-scnd-clr;
+      vertical-align: middle;
+      font-family: 'icons',sans-serif;
+    }
+  }
+}
+
