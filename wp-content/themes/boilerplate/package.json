@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "export NODE_ENV=development && webpack-dev-server --content-base src --inline --hot --port 3000",
-    "prod": "export NODE_ENV=production && webpack",
+    "prod": "export NODE_ENV=development && webpack",
     "test": "jest --coverage -u -c=./configs/jest.config.js"
   },
   "author": "Ievgen Bogomolov",
@@ -47,5 +47,8 @@
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
     "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "loose-envify": "^1.3.1"
   }
 }
