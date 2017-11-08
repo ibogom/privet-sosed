@@ -16,7 +16,7 @@ class App extends React.Component {
 
     render() {
         return (<div className="app-wrapper">
-                {this.props.loaded ? this.props.children : <PreloaderContainer/>  }
+                {this.props.loaded ? this.props.children : <PreloaderContainer {...this.props}/>  }
              </div>)
     }
 };
@@ -26,6 +26,7 @@ function mapStateToProps (state) {
         menu: state.API.menu,
         pages: state.API.pages,
         posts: state.API.posts,
+        preloader: state.preloader,
         loaded: isLoadingComplete(state)
     }
 }

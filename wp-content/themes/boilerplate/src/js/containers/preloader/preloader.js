@@ -1,12 +1,15 @@
 import React from "react";
 import {connect} from 'react-redux';
-import { AppActions } from '../../actions';
 
 /** COMPONENTS **/
 import {Preloader} from '../../components';
 
 const mapStateToProps = (state, ownProps) => ({
-    preloader: state.preloader.loaded
+    index: state.preloader.index,
+    sentences: state.preloader.sentences,
+    activeLetters: state.preloader.activeLetters,
+    progressBar: state.preloader.progressBar,
+    isLastAnimatedLetter: state.preloader.isLastAnimatedLetter
 });
 
 const PreloaderContainer = connect(mapStateToProps)(Preloader);

@@ -3,19 +3,7 @@ import { PreloaderActions } from '../../actions';
 
 import './preloader.scss';
 
-const phrases = ['Загружаю','рисую разметку','ищу стройматериалы','звоню прорабам', 'еще чуть-чуть', 'добро пожаловать', 'на сайт', 'Привет сосед'];
-const sentences = phrases.map(phrase => { return phrase.split('') });
-
 export default class Preloader extends React.Component {
-
-    state ={
-        sentences: sentences,
-        index: 0,
-        isLastIndex: false,
-        progressBar:0,
-        activeIndexes: [],
-        isLastAnimatedLetter: false
-    };
 
     constructor(props) {
         super(props);
@@ -23,63 +11,51 @@ export default class Preloader extends React.Component {
         this.props.dispatch(PreloaderActions.startAnimation());
     }
 
-    startAnimation(){
-        let isLastLetter = this.state.activeIndexes.length -1 <= this.state.sentences[this.state.index].length;
-        let isLastAnimatedLetter = this.state.activeIndexes.length -1 === this.state.sentences[this.state.index].length;
-        let isLastSentence = this.state.index === this.state.sentences.length - 1;
+    componentDidUpdate(){
+        let isLastLetter = this.props.activeLetters.length -1 <= this.props.sentences[this.props.index].length;
+        let isLastAnimatedLetter = this.props.activeLetters.length -1 === this.props.sentences[this.props.index].length;
+        let isLastSentence = this.props.index === this.props.sentences.length - 1;
 
-        isLastLetter ? this.setALstActiveIndex(isLastAnimatedLetter) : this.setNextSentence(isLastSentence);
+        isLastLetter ? this.setLastActiveIndex(isLastAnimatedLetter) : this.setNextSentence(isLastSentence);
     }
 
-    setALstActiveIndex(isLastAnimatedLetter){
-        this.state.activeIndexes.push(this.state.activeIndexes.length);
+    setLastActiveIndex(isLastAnimatedLetter){
         window.setTimeout(function () {
-            this.setState({
-                activeIndexes: this.state.activeIndexes,
-                isLastAnimatedLetter: isLastAnimatedLetter
-            });
-        }.bind(this), isLastAnimatedLetter ? 250 : 100);
+            this.props.dispatch(PreloaderActions.setActiveLetters(this.props.activeLetters, isLastAnimatedLetter));
+        }.bind(this), isLastAnimatedLetter ? 350 : 100);
     }
 
     setNextSentence(isLastSentence){
-        if(isLastSentence && this.state.isLastAnimatedLetter){
+        if(isLastSentence && this.props.isLastAnimatedLetter){
             this.props.dispatch(PreloaderActions.animationComplete());
         }
 
-        if(!isLastSentence && this.state.isLastAnimatedLetter) {
-            let progressBar = ((this.state.index + 1) * 50) / this.state.sentences.length;
-            this.setState({
-                index: this.state.index + 1,
-                activeIndexes: [],
-                progressBar: progressBar,
-                isLastAnimatedLetter: false
-            });
+        if(!isLastSentence && this.props.isLastAnimatedLetter) {
+            let progressBar = ((this.props.index + 1) * 50) / this.props.sentences.length;
+            this.props.dispatch(PreloaderActions.setSentence(this.props.index, progressBar));
         }
     }
 
     getLetters(letter, i){
-        return <div key={i} className={"letter "+ (this.state.activeIndexes[i] === i ? 'animate-vertical' : '')}>
+        return <div key={i} className={"letter "+ (this.props.activeLetters[i] === i ? 'animate-vertical' : '')}>
                     { letter }
                </div>
     }
 
     render() {
-        let letters = this.state.sentences[this.state.index].map(this.getLetters);
-        let isLastSentence = this.state.index === this.state.sentences.length - 1;
+        let letters = this.props.sentences[this.props.index].map(this.getLetters);
 
-        this.startAnimation();
-
-        return (<div className={isLastSentence && this.state.isLastAnimatedLetter ? 'preloader animate-out' : 'preloader'}>
+        return (<div className="preloader">
             <div className="content-wrapper">
                 <div className="logo-content">
                     {letters}
                 </div>
                 <div className="progress-bar">
                     <div className="left-part" style={{
-                        width: this.state.progressBar + '%'
+                        width: this.props.progressBar + '%'
                     }} />
                     <div className="right-part" style={{
-                        width: this.state.progressBar  + '%'
+                        width: this.props.progressBar  + '%'
                     }} />
                 </div>
             </div>
