@@ -1,6 +1,6 @@
 import { preloaderTypes } from '../actions';
 
-const phrases = ['Загружаю','рисую разметку','ищу стройматериалы','звоню прорабам', 'еще чуть-чуть', 'добро пожаловать', 'на сайт', 'Привет сосед'];
+const phrases = ['Загружаю','рисую разметку','ищу стройматериалы','еще чуть-чуть', 'все готово','Привет сосед'];
 const sentences = phrases.map(phrase => { return phrase.split('') });
 
 const defaultState = {
@@ -18,6 +18,10 @@ const preloader = (state = defaultState, action) => {
         case preloaderTypes.START_ANIMATION:
             return Object.assign({}, state, {
                 loaded: false
+            });
+        case preloaderTypes.SET_PROGRESS_BAR:
+            return Object.assign({}, state, {
+                progressBar: action.progressBar
             });
         case preloaderTypes.SET_SENTENCE:
             return Object.assign({}, state, {

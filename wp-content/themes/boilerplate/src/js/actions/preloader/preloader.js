@@ -12,21 +12,30 @@ export function animationComplete() {
     }
 };
 
-export function setActiveLetters(activeLetters, isLastAnimatedLetter) {
-    activeLetters.push(activeLetters.length);
+export function setActiveLetters(props, isLastAnimatedLetter) {
+    props.activeLetters.push(props.activeLetters.length);
     return {
         type: preloaderTypes.SET_ACTIVE_LETTERS,
-        activeLetters: activeLetters,
+        activeLetters: props.activeLetters,
         isLastAnimatedLetter: isLastAnimatedLetter
     }
 };
 
-export function setSentence(index, progressBar) {
+export function setSentence(props) {
+    let progressBar = ((props.index + 1) * 50) / props.sentences.length;
     return {
         type: preloaderTypes.SET_SENTENCE,
-        index: index + 1,
+        index: props.index + 1,
         activeLetters: [],
         progressBar: progressBar,
         isLastAnimatedLetter: false
+    }
+}
+
+export function setProgressBar(props) {
+    let progressBar = ((props.index + 1) * 50) / props.sentences.length;
+    return {
+        type: preloaderTypes.SET_PROGRESS_BAR,
+        progressBar: progressBar,
     }
 }
