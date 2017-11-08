@@ -4,6 +4,9 @@ import * as ApiActions from './wpApi';
 import * as routeTypes from './routes/routeTypes';
 import * as RouteActions from './routes/routes';
 
+import * as preloaderTypes from './preloader/preloaderTypes';
+import * as PreloaderActions from './preloader/preloader';
+
 import * as initialTypes from './initial/initialTypes';
 import * as InitialAction from './initial/initial';
 
@@ -15,6 +18,9 @@ export {ApiActions}
 
 export {routeTypes}
 export {RouteActions}
+
+export {preloaderTypes}
+export {PreloaderActions}
 
 export {initialTypes}
 export {InitialAction}

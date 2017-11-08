@@ -6,7 +6,7 @@ import { isLoadingComplete } from '../../reducers';
 import './app.scss';
 
 /** COMPONENTS **/
-import {Preloader} from '../../components';
+import { PreloaderContainer } from '../../containers';
 
 class App extends React.Component {
 
@@ -16,7 +16,7 @@ class App extends React.Component {
 
     render() {
         return (<div className="app-wrapper">
-                { this.props.loaded ? this.props.children : <Preloader/> }
+                {this.props.loaded ? this.props.children : <PreloaderContainer/>  }
              </div>)
     }
 };

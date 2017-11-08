@@ -12,6 +12,11 @@
     display: table-cell;
     vertical-align: middle;
   }
+  &.animate-out{
+    opacity: 0;
+    -webkit-animation: out 500ms ease-in-out;
+    animation: out 500ms ease-in-out;
+  }
   .progress-bar{
     position: relative;
     display: block;
@@ -65,14 +70,14 @@
       &.animate-vertical {
         transform: translateY(0);
         -webkit-transform: translateY(0);
-        -webkit-animation: entry 300ms ease-in-out;
-        animation: entry 300ms ease-in-out;
+        -webkit-animation: entry 150ms ease-in-out;
+        animation: entry 150ms ease-in-out;
       }
       &.animate-horizontal {
         transform: translate3d(-2000px, 0, 0);
         -webkit-transform: translate3d(-2000px, 0, 0);
-        -webkit-animation: out 300ms ease-in-out;
-        animation: out 300ms ease-in-out;
+        -webkit-animation: out 200ms ease-in-out;
+        animation: out 200ms ease-in-out;
       }
     }
   }
@@ -95,5 +100,23 @@
   100% {
     transform: translateY(0);
     -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
