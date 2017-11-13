@@ -12,26 +12,6 @@ export function animationComplete() {
     }
 };
 
-export function setActiveLetters(props, isLastAnimatedLetter) {
-    props.activeLetters.push(props.activeLetters.length);
-    return {
-        type: preloaderTypes.SET_ACTIVE_LETTERS,
-        activeLetters: props.activeLetters,
-        isLastAnimatedLetter: isLastAnimatedLetter
-    }
-};
-
-export function setSentence(props) {
-    let progressBar = ((props.index + 1) * 50) / props.sentences.length;
-    return {
-        type: preloaderTypes.SET_SENTENCE,
-        index: props.index + 1,
-        activeLetters: [],
-        progressBar: progressBar,
-        isLastAnimatedLetter: false
-    }
-}
-
 export function setProgressBar(props) {
     let progressBar = ((props.index + 1) * 50) / props.sentences.length;
     return {
@@ -39,3 +19,5 @@ export function setProgressBar(props) {
         progressBar: progressBar,
     }
 }
+
+export { setActiveLetters, setSentence } from './letters/letters';

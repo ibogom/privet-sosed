@@ -1,0 +1,95 @@
+@import "../../../../assets/themes/default/color_cheme";
+@import "../../../../assets/themes/default/font-sizes";
+@import "../../../../assets/themes/default/animation";
+@import "../../../../assets/themes/default/variables";
+
+.letters {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $high-index;
+  display: table;
+  background-color: $pr-clr;
+  .content-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &.animate-out{
+    opacity: 0;
+    -webkit-animation: out 800ms ease-in-out;
+    animation: out 800ms ease-in-out;
+  }
+  .progress-bar{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    .left-part{
+      &:before{
+        right: 0;
+      }
+    }
+    .right-part{
+      &:before{
+        left: 0;
+      }
+    }
+    .left-part, .right-part{
+      display: inline-block;
+      width: 0%;
+      height: 2px;
+      position: relative;
+      -webkit-animation: animate-width 16s ease-out;
+      animation: animate-width 16s ease-out;
+      &:before{
+        content: '';
+        width: inherit;
+        height: 2px;
+        background-color: $fourth-clr;
+        display: block;
+        position: absolute;
+      }
+    }
+  }
+  .logo-content {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    font-size: $font-38px;
+    .letter {
+      display: inline-block;
+      margin: 0 4px;
+      font-size: inherit;
+      font-weight: bold;
+      text-transform: uppercase;
+      transform: translateY(-$font-38px);
+      -webkit-transform: translateY(-$font-38px);
+      &.animate-vertical {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -webkit-animation: entry 150ms ease-in-out;
+        animation: entry 150ms ease-in-out;
+      }
+      &.animate-horizontal {
+        transform: translate3d(-2000px, 0, 0);
+        -webkit-transform: translate3d(-2000px, 0, 0);
+        -webkit-animation: out 200ms ease-in-out;
+        animation: out 200ms ease-in-out;
+      }
+    }
+  }
+}
+
+/** MOBILE **/
+@media (max-width: $mobile-max-width) {
+  .letters {
+    .logo-content {
+      max-width: 300px;
+    }
+  }
+}
+

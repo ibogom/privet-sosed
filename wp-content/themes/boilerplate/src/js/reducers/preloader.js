@@ -1,7 +1,16 @@
 import { preloaderTypes } from '../actions';
+import Parser from 'ua-parser-js';
 
-const phrases = ['Загружаю','рисую разметку','ищу стройматериалы','еще чуть-чуть', 'все готово','Привет сосед'];
-const sentences = phrases.map(phrase => { return phrase.split('') });
+const desktopPhrases = ['Загружаю', 'рисую разметку', 'ищу стройматериалы', 'все готово', 'Привет сосед'];
+const mobilePhrases = ['Загружаю', 'рисую', 'анимирую', 'все готово', 'Привет сосед'];
+
+let platform = Parser(window.navigator.userAgent);
+const sentences =[];
+function getLetter(phrase) {
+    return  sentences.push(phrase.split(''));
+}
+
+platform.device.type === 'mobile' ? mobilePhrases.forEach(getLetter) : desktopPhrases.forEach(getLetter);
 
 const defaultState = {
     loaded: false,

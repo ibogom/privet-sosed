@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { isLoadingComplete } from '../../reducers';
+import { isLoadingComplete, getPlatformData } from '../../reducers';
 
 import './app.scss';
 
@@ -16,7 +16,7 @@ class App extends React.Component {
 
     render() {
         return (<div className="app-wrapper">
-                { this.props.loaded ? this.props.children : <PreloaderContainer {...this.props}/>  }
+                { this.props.loaded ? this.props.children : <PreloaderContainer preloaderType="letters" {...this.props}/>}
              </div>)
     }
 };
@@ -27,7 +27,8 @@ function mapStateToProps (state) {
         pages: state.API.pages,
         posts: state.API.posts,
         preloader: state.preloader,
-        loaded: isLoadingComplete(state)
+        loaded: isLoadingComplete(state),
+        platform: getPlatformData()
     }
 }
 
