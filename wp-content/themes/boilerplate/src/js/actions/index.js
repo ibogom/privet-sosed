@@ -4,6 +4,9 @@ import * as ApiActions from './wpApi';
 import * as routeTypes from './routes/routeTypes';
 import * as RouteActions from './routes/routes';
 
+import * as sliderTypes from './slider/sliderTypes';
+import * as SliderActions from './slider/slider';
+
 import * as preloaderTypes from './preloader/preloaderTypes';
 import * as PreloaderActions from './preloader/preloader';
 
@@ -18,6 +21,9 @@ export {ApiActions}
 
 export {routeTypes}
 export {RouteActions}
+
+export {sliderTypes}
+export {SliderActions}
 
 export {preloaderTypes}
 export {PreloaderActions}

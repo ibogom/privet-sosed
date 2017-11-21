@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { RouteActions } from '../../actions';
 import {Link} from 'react-router-dom';
 
+import { SliderContainer } from '../../containers';
+
 import './root.scss';
 
 class Root extends React.Component {
@@ -21,6 +23,7 @@ class Root extends React.Component {
                           className="btn-scs">
                         РАСЧИТАТЬ
                     </Link>
+                <SliderContainer/>
             </div>
             )
     }

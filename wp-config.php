@@ -86,4 +86,5 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
+define('UPLOADS', 'wp-content/themes/boilerplate/dist/assets/images');
 require_once(ABSPATH . 'wp-settings.php');

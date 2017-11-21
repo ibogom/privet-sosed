@@ -3,6 +3,7 @@ import routes from './routes';
 import initial from './initial';
 import app from './app';
 import preloader from './preloader';
+import slider from './slider';
 import API from './api/';
 
 import Parser from 'ua-parser-js';
@@ -11,6 +12,7 @@ const AppReducers = combineReducers({
     routes,
     initial,
     preloader,
+    slider,
     app,
     API
 });

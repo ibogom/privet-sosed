@@ -1,0 +1,48 @@
+.slider{
+  .slider-content-wrapper{
+    width: 800px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    .slider-left-section,
+    .slider-right-section{
+      display: inline-block;
+      width: 50%;
+      vertical-align: middle;
+    }
+    .slider-text-wrapper,
+    .slider-images-wrapper {
+      width: 100%;
+      height: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .slider-images-wrapper{
+      position: absolute;
+      width: 300%;
+      top: 0;
+    }
+
+    .slider-text,
+    .slider-image{
+      width: 100%;
+      height: 100%;
+    }
+    .slider-text{
+      display: table;
+      text-align: left;
+    }
+    .text{
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .slider-image{
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+    }
+  }
+}
