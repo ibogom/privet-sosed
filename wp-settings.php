@@ -15,6 +15,8 @@
  */
 define( 'WPINC', 'wp-includes' );
 
+define('UPLOADS', 'assets/images');
+
 // Include files required for initialization.
 require( ABSPATH . WPINC . '/load.php' );
 require( ABSPATH . WPINC . '/default-constants.php' );
@@ -467,3 +469,5 @@ if ( is_multisite() ) {
  * @since 3.0.0
  */
 do_action( 'wp_loaded' );
+
+
