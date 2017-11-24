@@ -2,19 +2,25 @@ import { sliderTypes } from '../actions';
 
 const defaultState = {
     slides: [{
-        text: 'Slider text version 1',
+        text: 'ВЫБЕРИТЕ ДИЗАЙН',
         img: 'assets/images/2017/11/gallery-1.jpg'
     },{
-        text: 'Slider text version 2',
+        text: 'УКАЖИТЕ ПЛАНИРОВКУ',
         img: 'assets/images/2017/11/gallery-2.jpg'
     },{
-        text: 'Slider text version 3',
+        text: 'ПОЛУЧИТЕ ГОТОВУЮ КВАРТИРУ ЧЕРЕЗ 15 ДНЕЙ',
         img: 'assets/images/2017/11/gallery-3.jpg'
-    }]
+    }],
+    activeSlide: 0,
+    interval: 3000
 };
 
 const slider = (state = defaultState, action) => {
     switch (action.type) {
+        case sliderTypes.SET_ACTIVE_SLIDE:
+            return Object.assign({}, state, {
+               activeSlide: action.activeSlide
+            });
         case sliderTypes.GET_SLIDES:
             return  [...state, {
                 slides: action.slides,

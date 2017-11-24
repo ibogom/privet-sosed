@@ -3,49 +3,45 @@ import PropTypes from 'prop-types';
 
 import './slider.scss';
 
+import Slides from './slides/slides';
+import Bullets from './bullets/bullets';
+import Description from './description/description';
+
 export default class Slider extends React.Component {
 
     static propTypes = {
-        slides: PropTypes.array.isRequired
+        slides: PropTypes.array.isRequired,
+        activeSlide: PropTypes.number.isRequired,
+        interval: PropTypes.number.isRequired
     };
 
-    static defaultProps = {};
-
-    constructor(props) {
-        super(props);
-        this.renderSlidesText = this.renderSlidesText.bind(this);
-        this.renderSlideImages = this.renderSlideImages.bind(this);
+    componentDidMount() {
+        this.startAnimation();
     }
 
-    renderSlidesText() {
-        return this.props.slides.map((slide, i) => {
-            return <li key={i} className="slider-text">
-                <span className="text">{slide.text}</span>
-            </li>
-        });
+    componentDidUpdate() {
+        this.startAnimation();
     }
 
-    renderSlideImages() {
-        return this.props.slides.map((slide, i) => {
-            return <li key={i} className="slider-image" style={{backgroundImage: 'url( ' + slide.img + ')'}}>
-            </li>
-        });
+    startAnimation() {
+        this.animationTimeout && window.clearTimeout(this.animationTimeout);
+        this.animationTimeout = window.setTimeout(function () {
+            let activeSlide = this.props.activeSlide !== this.props.slides.length - 1 ? this.props.activeSlide + 1 : 0;
+            this.props.setActiveSlide(activeSlide);
+        }.bind(this), this.props.interval);
     }
 
     render() {
         return (<div className="slider">
             <div className="slider-content-wrapper">
                 <div className="slider-left-section">
-                    <ul className="slider-text-wrapper">
-                        {this.renderSlidesText()}
-                    </ul>
+                    <Description {...this.props} />
                 </div>
                 <div className="slider-right-section">
-                    <ul className="slider-images-wrapper">
-                        {this.renderSlideImages()}
-                    </ul>
+                    <Slides {...this.props} />
                 </div>
             </div>
+            <Bullets {...this.props} />
         </div>)
     }
 };

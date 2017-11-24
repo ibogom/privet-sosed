@@ -1,0 +1,27 @@
+@import "../../../../assets/themes/default/color_cheme";
+@import "../../../../assets/themes/default/font-sizes";
+@import "../../../../assets/themes/default/variables";
+
+.slider-images-wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 800ms ease-in-out;
+  -moz-transition: 800ms ease-in-out;
+  -o-transition: 800ms ease-in-out;
+  transition: 800ms ease-in-out;
+  .slider-image{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.active{
+      display: inline-block;
+    }
+  }
+}

@@ -17,6 +17,7 @@ class App extends React.Component {
     render() {
         return (<div className="app-wrapper">
                 { this.props.loaded ? this.props.children : <PreloaderContainer preloaderType="letters" {...this.props}/>}
+                {/*{ this.props.children }*/}
              </div>)
     }
 };

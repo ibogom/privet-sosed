@@ -1,0 +1,32 @@
+@import "../../../../assets/themes/default/color_cheme";
+@import "../../../../assets/themes/default/font-sizes";
+@import "../../../../assets/themes/default/variables";
+
+.slider-descriptions-wrapper {
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-transition-delay: 0.2s !important;
+  -o-transition-delay: 0.2s !important;
+  -moz-transition-delay: 0.2s !important;
+  transition-delay: 0.2s !important;
+  -webkit-transition: 500ms ease-in-out;
+  -moz-transition: 500ms ease-in-out;
+  -o-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+  .slider-text{
+    height: 100%;
+    display: table;
+    text-align: left;
+    width: 300px;
+  }
+  .text{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: $font-40px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+}

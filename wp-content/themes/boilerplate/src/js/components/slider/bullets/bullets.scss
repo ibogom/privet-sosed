@@ -1,0 +1,44 @@
+@import "../../../../assets/themes/default/color_cheme";
+@import "../../../../assets/themes/default/font-sizes";
+@import "../../../../assets/themes/default/variables";
+
+.slider-bullets-wrapper{
+  width: $desktop-content-width;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+  display: block;
+  list-style: none;
+  .slider-bullet{
+    position: relative;
+    margin: 0 10px;
+    min-width: 80px;
+    display: inline-block;
+    text-align: left;
+    font-size: $font-24px;
+    font-weight: 100;
+    color: $brdr-light;
+    cursor: pointer;
+    border-top: 2px solid $brdr-light;
+    &:before{
+      position: absolute;
+      top: -2px;
+      left: 0;
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: $brdr-def;
+      display: block;
+    }
+    &.active{
+      color: $brdr-def;
+      &:before{
+        width: 100%;
+        -webkit-transition: width 3s linear;
+        -moz-transition: width 3s linear;
+        -o-transition: width 3s linear;
+        transition: width 3s linear;
+      }
+    }
+  }
+}

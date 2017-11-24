@@ -128,6 +128,11 @@ h3.title{
   font-size: $font-20px;
 }
 
+.extra-big-title {
+  font-size: $font-44px;
+  font-weight: bold;
+}
+
 .contacts{
   display: block;
   color: $font-thrd-clr;
@@ -145,7 +150,7 @@ h3.title{
 }
 
 .slogan{
-  width: 50%;
+  width: 80%;
   color: $font-thrd-clr;
   text-align: center;
   margin: 0 auto;
@@ -172,4 +177,16 @@ h3.title{
 
 section{
   height: 100%;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.align-left{
+  text-align: left;
 }

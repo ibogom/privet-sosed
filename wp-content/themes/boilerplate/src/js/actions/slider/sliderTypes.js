@@ -1,3 +1,5 @@
 const GET_SLIDES = 'GET_SLIDES';
+const SET_ACTIVE_SLIDE = 'SET_ACTIVE_SLIDE';
 
 export { GET_SLIDES };
+export { SET_ACTIVE_SLIDE };
