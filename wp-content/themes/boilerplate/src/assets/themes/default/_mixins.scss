@@ -1,0 +1,56 @@
+@mixin title-slidein ($margin){
+  @keyframes slidein {
+    0% { margin-left:-$margin; }
+    20% { margin-left:-$margin; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+  }
+  @-webkit-keyframes slidein {
+    0% { margin-left:-$margin; }
+    20% { margin-left:-$margin; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+  }
+}
+@mixin title-reveal ($width){
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      width: 0px;
+    }
+    20% {
+      opacity: 1;
+      width: 0px;
+    }
+    30% {
+      width: $width;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      width: $width;
+    }
+  }
+  @-webkit-keyframes reveal {
+    0% {
+      opacity: 0;
+      width: 0px;
+    }
+    20% {
+      opacity: 1;
+      width: 0px;
+    }
+    30% {
+      width: $width;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      width: $width;
+    }
+  }
+}

@@ -3,6 +3,7 @@
 @import "font-sizes";
 @import "icons";
 @import "variables";
+@import "mixins";
 @import "animation";
 
 /** HEADER **/
@@ -128,9 +129,76 @@ h3.title{
   font-size: $font-20px;
 }
 
-.extra-big-title {
+.extra-big-title{
   font-size: $font-44px;
   font-weight: bold;
+  padding-right: 40px;
+  position: relative;
+  margin: 10px 0;
+  div{
+    display: inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  div:first-of-type {
+    animation: showup 7s ease-in-out;
+    margin-right: 10px;
+  }
+  div:last-of-type {
+    @include title-reveal(470px);
+    animation: reveal 7s ease-in-out;
+  }
+  div:last-of-type span {
+    @include title-slidein(800px);
+    animation: slidein 7s ease-in-out;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    display: inline-block;
+    top: $font-16px;
+    background-color: $font-scnd-clr;
+    animation: animate-title-width 800ms ease-in-out;
+  }
+}
+
+.separator{
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 100%;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    display: inline-block;
+    top: -$font-8px;
+    left: 0;
+    background-color: $font-scnd-clr;
+    animation: animate-title-width 800ms ease-in-out;
+  }
+}
+
+.medium-title {
+  font-size: $font-20px;
+  position: relative;
+  margin:5px 0;
+  padding-top: 5px;
+  animation: showup-medium 2.8s ease-in-out;
+  div{
+    display: inline-block;
+    margin: 0 5px;
+    color: $font-thrd-clr;
+    &.active{
+      color: $font-scnd-clr;
+    }
+  }
+  div:last-child{
+    margin-right: 0;
+  }
 }
 
 .contacts{
@@ -190,3 +258,4 @@ section{
 .align-left{
   text-align: left;
 }
+

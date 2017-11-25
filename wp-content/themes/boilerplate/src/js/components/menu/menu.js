@@ -48,7 +48,7 @@ export default class Menu extends React.Component {
                   className={"block" + (this.props.route === 'calculator' ? ' active' : '')}>
                 Калькулятор
             </Link>
-            { this.props.menuItems.length !== 0 ? this.renderNavigation() : <p className="loading">Loading...</p> }
+            { this.props.menuItems.length !== 0 ? this.renderNavigation() : '' }
             </nav>);
     }
 }

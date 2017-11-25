@@ -24,7 +24,17 @@ class Root extends React.Component {
                         РАСЧИТАТЬ
                     </Link>
                 <SliderContainer/>
-                <h2 className="extra-big-title align-right">НАШИ ВАРИАНТЫ ДИЗАЙНА</h2>
+                <h2 className="extra-big-title align-right">
+                    <div className="element">НАШИ</div>
+                    <div className="element"><span>ВАРИАНТЫ ДИЗАЙНА</span></div>
+                </h2>
+                <h3 className="medium-title align-right">
+                    <div className="separator" />
+                    <div className="element active">ГОТОВЫЙ ДИЗАЙН</div>
+                    <div className="separator" />
+                    <div className="element"><span>СВОЙ СТИЛЬ</span></div>
+                    <div className="separator" />
+                </h3>
             </div>
             )
     }
