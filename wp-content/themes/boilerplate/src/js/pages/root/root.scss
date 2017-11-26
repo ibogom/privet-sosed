@@ -9,6 +9,16 @@
   text-align: center;
   width: $desktop-content-width;
   margin: 0 auto;
+  .title{
+    animation: entry 600ms ease-in-out;
+  }
+  .slogan{
+    animation-delay: 1.2s;
+    animation: entry 600ms ease-in-out;
+  }
+  .btn-scs{
+    animation: entry 600ms ease-in-out;
+  }
 }
 
 

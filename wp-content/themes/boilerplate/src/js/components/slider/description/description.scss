@@ -15,6 +15,7 @@
   -moz-transition: 500ms ease-in-out;
   -o-transition: 500ms ease-in-out;
   transition: 500ms ease-in-out;
+  animation: showup-regular 800ms ease-in-out;
   .slider-text{
     height: 100%;
     display: table;

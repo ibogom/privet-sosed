@@ -9,6 +9,8 @@
   text-align: left;
   display: block;
   list-style: none;
+  overflow: hidden;
+  animation: bullets-animation-entry 800ms ease-in-out;
   .slider-bullet{
     position: relative;
     margin: 0 10px;
