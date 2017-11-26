@@ -27,15 +27,13 @@ export default class Menu extends React.Component {
         return (<nav className={this.props.isMenuOpened ? "navigation open" : "navigation"}>
                 <span className="close" onClick={this.props.onClick}/>
                 <h3 className="title">
-                    Hello,
+                    Привет,
                 </h3>
                 <p className="welcome-text">
-                    Vestibulum commodo volutpat a,
-                    convallis ac, laoreet enim.
-                    Phasellus fermentum in, dolor.
-
-                    Pellentesque facilisis.
-                    Nulla imperdiet sit amet magna.
+                    Наш сервис работает только с высококлассными специалистами.
+                </p>
+                <p className="welcome-text">
+                    Вам больше не нужно ездить на стройку, общаться с прорабом или самостоятельно закупать материалы.
                 </p>
                 <div className="social" />
             <Link to='/'

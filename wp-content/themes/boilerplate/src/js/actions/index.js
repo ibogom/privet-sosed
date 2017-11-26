@@ -7,6 +7,9 @@ import * as RouteActions from './routes/routes';
 import * as sliderTypes from './slider/sliderTypes';
 import * as SliderActions from './slider/slider';
 
+import * as galleryTypes from './gallery/galleryTypes';
+import * as GalleryActions from './gallery/gallery';
+
 import * as preloaderTypes from './preloader/preloaderTypes';
 import * as PreloaderActions from './preloader/preloader';
 
@@ -24,6 +27,9 @@ export {RouteActions}
 
 export {sliderTypes}
 export {SliderActions}
+
+export {galleryTypes}
+export {GalleryActions}
 
 export {preloaderTypes}
 export {PreloaderActions}

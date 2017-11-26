@@ -21,17 +21,19 @@ $nav-menu-width: 250px;
     transform: translate3d(0, 0, 0);
   }
   .welcome-text{
-    color: $font-thrd-clr;
-    padding: 0;
-    width: 180px;
+    color: $font-pr-clr;
+    padding: 5px 0;
+    width: 200px;
     box-sizing: border-box;
     margin: 0 auto;
     font-size: $font-14px;
-    line-height: $font-22px;
+    font-weight: 100;
+    line-height: $font-24px;
+    font-family: 'Roboto-Thin', sans-serif;
   }
 
   .social{
-    width: 180px;
+    width: 200px;
     min-height: 20px;
     margin: 15px 30px;
     border-bottom: 1px solid $brdr-def;

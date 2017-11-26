@@ -3,6 +3,7 @@ import routes from './routes';
 import initial from './initial';
 import app from './app';
 import preloader from './preloader';
+import gallery from './gallery';
 import slider from './slider';
 import API from './api/';
 
@@ -12,6 +13,7 @@ const AppReducers = combineReducers({
     routes,
     initial,
     preloader,
+    gallery,
     slider,
     app,
     API

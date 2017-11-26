@@ -1,0 +1,79 @@
+@import "../../../../assets/themes/default/color_cheme";
+@import "../../../../assets/themes/default/font-sizes";
+@import "../../../../assets/themes/default/variables";
+
+.gallery-item{
+  display: inline-block;
+  width: 320px;
+  height: 480px;
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+  &:nth-child(3n){
+    margin-right: 0;
+  }
+  &:nth-child(4n){
+    margin-left: 0;
+  }
+  &:first-child{
+    margin-left: 0;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
+  &:before{
+    content:'';
+    position: absolute;
+    left: 0;
+    right:0;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gallery-item-opacity;
+  }
+  &.active{
+    &:before{
+      background-color: transparent;
+    }
+  }
+  &:hover{
+    &:before{
+      background-color: transparent;
+    }
+  }
+
+  .description-wrapper{
+    width: 100%;
+    height:100%;
+    display: table;
+    position: relative;
+    text-decoration: none;
+  }
+  .description{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding: 10px 10px 20px 10px;
+    box-sizing: border-box;
+    vertical-align: bottom;
+    .title,
+    .text,
+    .link{
+      width: 100%;
+      color: $font-pr-clr;
+    }
+     .title{
+       font-weight: bold;
+       text-align: left;
+       margin-bottom: 0;
+       font-size: $font-24px;
+     }
+    .text{
+      font-size: $font-14px;
+      margin: 10px 0;
+      line-height: $font-20px;
+    }
+  }
+}

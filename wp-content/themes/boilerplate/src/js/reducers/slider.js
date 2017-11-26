@@ -21,7 +21,7 @@ const slider = (state = defaultState, action) => {
             return Object.assign({}, state, {
                activeSlide: action.activeSlide
             });
-        case sliderTypes.GET_SLIDES:
+        case sliderTypes.GET_SLIDES_SUCCESS:
             return  [...state, {
                 slides: action.slides,
             }];
