@@ -145,11 +145,11 @@ h3.title{
     margin-right: 10px;
   }
   div:last-of-type {
-    @include title-reveal(470px);
+    @include title-reveal(490px);
     animation: reveal 7s ease-in-out;
   }
   div:last-of-type span {
-    @include title-slidein(800px);
+    @include title-slidein(810px);
     animation: slidein 7s ease-in-out;
   }
   &:after{
