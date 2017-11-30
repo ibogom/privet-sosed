@@ -12,17 +12,25 @@ export default class Gallery extends React.Component {
         galleryItems: PropTypes.array.isRequired,
     };
 
-    renderGalleryItems(){
-        return this.props.galleryItems.map((item, i) => {
-            return <GalleryItem key={i} item={item} />
-        });
+    constructor(props){
+        super(props);
+        this.renderGalleryItems = this.renderGalleryItems.bind(this);
+    }
+
+    renderGalleryItems(item, i){
+        return <GalleryItem {...this.props} key={i} item={item} />
     }
 
     render() {
+        let el = this.galleryItems && this.galleryItems.getBoundingClientRect();
+        let gameItems = this.props.galleryItems.map(this.renderGalleryItems);
+
         return (<div className="gallery-wrapper">
             <Filter/>
-            <ul className="gallery-items-wrapper">
-                {this.renderGalleryItems()}
+            <ul className={(el && el.top < this.props.scroll.delta) ?
+                "gallery-items-wrapper active" : "gallery-items-wrapper"}
+                ref={(wrapper) => { this.galleryItems = wrapper; }}>
+                    { gameItems }
             </ul>
         </div>)
     }

@@ -5,7 +5,8 @@ import {connect} from 'react-redux';
 import {Gallery} from '../../components';
 
 const mapStateToProps = (state, ownProps) => ({
-    galleryItems: state.gallery.galleryItems
+    galleryItems: state.gallery.galleryItems,
+    scroll: state.scroll
 });
 
 const GalleryContainer = connect(mapStateToProps)(Gallery);

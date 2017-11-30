@@ -34,7 +34,7 @@ export default class Pages extends React.Component {
         const Routes = this.props.menuItems.map((menu, i ) => this.getRoutes(menu, i));
         return (<main className="main">
             <Switch>
-                <Route exact path='/' render={props=> <Root {...props} />}/>
+                <Route exact path='/' render={props=> <Root {...Object.assign({}, this.props, props)} />}/>
                 { Routes }
                 <Route render={props => <NotFound {...props} />}/>
             </Switch>

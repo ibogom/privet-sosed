@@ -6,6 +6,7 @@ import PagesContainer from './pages/pages';
 import PreloaderContainer from './preloader/preloader';
 import SliderContainer from './slider/slider';
 import GalleryContainer from './gallery/gallery';
+import ScrollContainer from './scroll/scroll';
 
 export { App }
 export { HeaderContainer }
@@ -15,3 +16,4 @@ export { PagesContainer }
 export { PreloaderContainer }
 export { SliderContainer }
 export { GalleryContainer }
+export { ScrollContainer }

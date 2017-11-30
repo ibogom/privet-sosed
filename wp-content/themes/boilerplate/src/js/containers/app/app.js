@@ -6,7 +6,7 @@ import { isLoadingComplete, getPlatformData } from '../../reducers';
 import './app.scss';
 
 /** COMPONENTS **/
-import { PreloaderContainer } from '../../containers';
+import { PreloaderContainer, ScrollContainer } from '../../containers';
 
 class App extends React.Component {
 
@@ -16,8 +16,11 @@ class App extends React.Component {
 
     render() {
         return (<div className="app-wrapper">
-                { this.props.loaded ? this.props.children : <PreloaderContainer preloaderType="letters" {...this.props}/>}
-                {/*{ this.props.children }*/}
+                {/*{ this.props.loaded ?
+                 <ScrollContainer {...this.props}>{ this.props.children }</ScrollContainer> :
+                 <PreloaderContainer preloaderType="letters" {...this.props}/>}
+                */}
+                <ScrollContainer {...this.props}>{ this.props.children }</ScrollContainer>
              </div>)
     }
 };
@@ -25,9 +28,6 @@ class App extends React.Component {
 function mapStateToProps (state) {
     return {
         menu: state.API.menu,
-        pages: state.API.pages,
-        posts: state.API.posts,
-        preloader: state.preloader,
         loaded: isLoadingComplete(state),
         platform: getPlatformData()
     }

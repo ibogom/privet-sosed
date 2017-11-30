@@ -1,0 +1,3 @@
+const UPDATE_SCROLL = 'UPDATE_SCROLL';
+
+export { UPDATE_SCROLL };

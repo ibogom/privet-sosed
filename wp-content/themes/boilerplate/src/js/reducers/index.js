@@ -5,6 +5,7 @@ import app from './app';
 import preloader from './preloader';
 import gallery from './gallery';
 import slider from './slider';
+import scroll from './scroll';
 import API from './api/';
 
 import Parser from 'ua-parser-js';
@@ -15,6 +16,7 @@ const AppReducers = combineReducers({
     preloader,
     gallery,
     slider,
+    scroll,
     app,
     API
 });
