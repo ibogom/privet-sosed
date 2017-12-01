@@ -11,6 +11,19 @@
   padding: 0 20px;
   box-sizing: border-box;
   z-index: $middle-index;
+  .btn-scs{
+    opacity: 0;
+    height: 30px;
+    line-height: 15px;
+    margin: 0;
+  }
+  &.active{
+    box-shadow: 1px 2px 5px $header-opacity;
+    .btn-scs{
+      opacity: 1;
+      animation: showup-regular 800ms ease-in-out;
+    }
+  }
   .section{
     display: table;
     width: 100%;

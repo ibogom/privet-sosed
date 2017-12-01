@@ -7,7 +7,8 @@ import Pages from '../../pages';
 const mapStateToProps = (state, ownProps) => ({
     menuItems: state.API.menuItems,
     pages: state.API.pages,
-    posts: state.API.posts
+    posts: state.API.posts,
+    scroll: state.scroll
 });
 
 const PagesContainer = connect(mapStateToProps)(Pages);

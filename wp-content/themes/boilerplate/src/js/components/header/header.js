@@ -1,6 +1,9 @@
 import React from 'react';
-import './header.scss';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import './header.scss';
+
 
 export default class Header extends React.Component {
 
@@ -11,7 +14,7 @@ export default class Header extends React.Component {
     static defaultProps = {};
 
     render() {
-        return (<header className="header">
+        return (<header className={(this.props.scroll.top > 10) ? "header active" : "header"}>
             <div className="section">
                 <div className="left">
                     <span className="menu" onClick={this.props.onClick}>
@@ -26,7 +29,12 @@ export default class Header extends React.Component {
                     </div>
                     { this.props.children }
                 </div>
-                <div className="right" />
+                <div className="right">
+                    <Link to='/calculator'
+                          className="btn-scs">
+                        РАСЧИТАТЬ
+                    </Link>
+                </div>
             </div>
         </header>)
     }

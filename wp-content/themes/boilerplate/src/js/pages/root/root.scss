@@ -19,6 +19,54 @@
   .btn-scs{
     animation: entry 600ms ease-in-out;
   }
+  .content-section{
+    display: block;
+    width: 100%;
+    clear: both;
+    position: relative;
+      .element-ghost{
+        position: absolute;
+        font-size: $font-160px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 350px;
+        top: 100px;
+        color: lighten($font-thrd-clr, 25%);
+        font-weight: bold;
+        z-index: 1;
+      }
+      .extra-big-title{
+        opacity: 0;
+        transition: all 1s ease;
+        z-index: 10;
+        &.active{
+          opacity: 1;
+          animation: showup-regular 1s ease-in-out;
+        }
+      }
+      .content-text{
+        position: relative;
+        width: 65%;
+        font-size: $font-20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: all 1s ease;
+        z-index: 10;
+        &.active{
+          opacity: 1;
+          animation: entry 1s ease-in-out;
+        }
+        &.align-left{
+          float:left;
+        }
+        &.align-right{
+          float:right;
+        }
+      }
+  }
 }
 
 

@@ -16,11 +16,10 @@ class App extends React.Component {
 
     render() {
         return (<div className="app-wrapper">
-                {/*{ this.props.loaded ?
+                {this.props.loaded ?
                  <ScrollContainer {...this.props}>{ this.props.children }</ScrollContainer> :
-                 <PreloaderContainer preloaderType="letters" {...this.props}/>}
-                */}
-                <ScrollContainer {...this.props}>{ this.props.children }</ScrollContainer>
+                 <PreloaderContainer preloaderType="letters" {...this.props}/>
+                }
              </div>)
     }
 };
