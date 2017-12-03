@@ -6,17 +6,102 @@
   width: 90%;
   height: $footer-height;
   position: relative;
-  display: table;
   bottom: 0;
   margin: 0 auto;
   border-top: 1px solid $brdr-light;
+  .section {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+
   span{
     color: $font-thrd-clr;
     text-align: center;
     margin: 0 10px;
     font-size: $font-14px;
   }
-  .one, .two, three, .four{
+
+  .brdr-bottom{
+    border-bottom: 1px solid $brdr-light;
+  }
+
+  .title-big{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: $font-48px;
+    margin: 10px 0;
+  }
+
+  .description{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: $font-30px;
+    margin: 15px 0;
+  }
+
+  .btn-extra-big {
+    min-width: 350px;
+    text-transform: uppercase;
+    font-size: $font-38px;
+    padding: 15px 30px;
+    font-weight: bold;
+    margin: 10px 0;
+    letter-spacing: 0;
+  }
+
+  .md-2{
+    .one, .two{
+      width: 50%;
+      vertical-align: top;
+    }
+  }
+
+  .md-3{
+    .one, .three {
+      width: 30%;
+    }
+    .two{
+      width: 40%;
+    }
+  }
+
+  .options-wrapper{
+    display: table;
+    width: 100%;
+    .option{
+      display: table-cell;
+      width: 33%;
+      height: 100%;
+      .title{
+        text-transform: uppercase;
+        font-size: $font-18px;
+      }
+    }
+    .phone{
+      font-size: $font-20px;
+    }
+
+    .mail{
+      font-size: $font-18px;
+    }
+
+    .address{
+      font-size: $font-14px;
+      text-align: right;
+    }
+
+    .address,
+    .mail,
+    .phone{
+      color: $font-scnd-clr;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+    }
+  }
+
+  .one, .two, .three {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -24,19 +109,16 @@
 
   .one{
     text-align: left;
-    width: 30%;
   }
 
   .two{
-    width: 40%;
     span{
       font-size: $font-12px;
       color: $font-scnd-clr;
     }
   }
 
-  .four{
+  .three{
     text-align: right;
-    width: 30%;
   }
 }
